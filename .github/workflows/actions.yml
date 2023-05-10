@@ -7,4 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS Action
-        uses: mateo546/Simple-Actions@main
+        id: greet
+        uses: Github-Actions-Org-Mateo/Github-Actions-2
+        with:
+          who-to-greet: Mateo
+      - name: Log Greeting Time
+
+        run: echo "{{ steps.greet.outputs.time }}"    
