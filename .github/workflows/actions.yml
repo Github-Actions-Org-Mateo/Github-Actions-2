@@ -11,9 +11,9 @@ jobs:
           pwd
           ls
       - name: Simple JS Action
-        uses: Github-Actions-Org-Mateo/Github-Actions-2
+        id: greet
+        uses: Github-Actions-Org-Mateo/Github-Actions-2@main
         with:
           who-to-greet: Mateo
       - name: Log Greeting Time
-
         run: echo "{{ steps.greet.outputs.time }}"    
