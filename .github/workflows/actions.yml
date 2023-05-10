@@ -12,7 +12,7 @@ jobs:
           ls
       - name: Simple JS Action
         id: greet
-        uses: Github-Actions-Org-Mateo/Github-Actions-2@main
+        uses: Github-Actions-Org-Mateo/Github-Actions-2/.github/workflows
         with:
           who-to-greet: Mateo
       - name: Log Greeting Time
