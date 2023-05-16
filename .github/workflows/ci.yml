@@ -1,0 +1,30 @@
+name: CI
+on:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Github-Actions-Org-Mateo/Github-Actions-2@workflow
+      - name: Use NodeJS
+        uses: Github-Actions-Org-Mateo/Github-Actions-2@workflow
+        with:
+          node-version: "12.x"
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm test -- --coverage
+        env:
+          CI: true
+      - name: Build Project
+        if: github.event_name == 'push' 
+        run: npm run build
+      - name: deploy to staging
+        if: github.event_name == 'push' 
+        run: npx surge
+        env:
+          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
+          SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
