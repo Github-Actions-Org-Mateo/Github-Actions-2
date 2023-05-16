@@ -1,15 +1,1 @@
-name: Actions Workflow
-
-on: [push]
-
-jobs:
-  run-github-actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Simple JS Action
-        id: greet
-        uses: Github-Actions-Org-Mateo/Github-Actions-2@main
-        with:
-          who-to-greet: Mateo
-        - name: Log Greeting Time
-          run: echo "${{ steps.greet.outputs.time }}"
+name: Mateo
